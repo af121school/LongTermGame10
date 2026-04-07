@@ -106,7 +106,7 @@ func _run_actions():
 		_queued_actions.remove_at(0)
 		var source := action.source
 		if (not source) or source.alive:
-			await action.run()
+			await action.run(self)
 		# FIXME: Temporary timeout to wait after each turn.
 		# This is here mainly since we have no animations yet.
 		await get_tree().create_timer(0.5).timeout

@@ -16,7 +16,7 @@ var max_stack:
 		return stacks.size()
 
 func run_triggers(type: StatusEffectTrigger.Type, _instance: StatusEffectContainer) -> void:
-	# Get the current stack
+	# Get the current stack 
 	var stack := stacks[_instance.stacks - 1]
 	for trigger in stack.triggers:
 		if trigger.trigger_type == type and trigger.action:

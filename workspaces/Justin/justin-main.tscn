@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://314j0ymvw2hs"]
+
+[ext_resource type="Script" uid="uid://cbi33r5foad57" path="res://scripts/battle_logic/battle_manager.gd" id="1_i4pfr"]
+[ext_resource type="Script" uid="uid://c2dcuh7wij0sh" path="res://scripts/battle_logic/battle_character.gd" id="2_ishd8"]
+[ext_resource type="Script" path="res://scripts/ability/base_ability.gd" id="3_bvur8"]
+[ext_resource type="Resource" uid="uid://c71y0pm2tt1g" path="res://resources/abilities/fortune/pierce/pierce_1.tres" id="4_af2l1"]
+[ext_resource type="Resource" uid="uid://dyx8mryditssx" path="res://resources/abilities/fortune/avenge/avenge_4.tres" id="5_0vu6n"]
+[ext_resource type="Script" uid="uid://doviul66xwvvb" path="res://workspaces/artemis/health_label.gd" id="5_vvmht"]
+[ext_resource type="Script" uid="uid://b1qn3ek7b7ps4" path="res://workspaces/artemis/turn_label.gd" id="6_1b8x5"]
+
+[node name="Node2D" type="Node2D" unique_id=217755439 node_paths=PackedStringArray("player_team", "boss_team")]
+script = ExtResource("1_i4pfr")
+player_team = [NodePath("Player1"), NodePath("Player2")]
+boss_team = [NodePath("Boss")]
+
+[node name="Player1" type="Node2D" parent="." unique_id=1941574995]
+position = Vector2(561, 471)
+script = ExtResource("2_ishd8")
+max_health = 500
+abilities = Array[ExtResource("3_bvur8")]([ExtResource("5_0vu6n")])
+metadata/_custom_type_script = "uid://c2dcuh7wij0sh"
+
+[node name="Health" type="Label" parent="Player1" unique_id=1181677918]
+offset_left = -108.0
+offset_top = -49.0
+offset_right = -68.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 53
+script = ExtResource("5_vvmht")
+
+[node name="Turn" type="Label" parent="Player1" unique_id=2065990301]
+offset_left = -208.0
+offset_top = 53.0
+offset_right = -168.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 53
+script = ExtResource("6_1b8x5")
+
+[node name="Player2" type="Node2D" parent="." unique_id=647339813]
+position = Vector2(563, 715)
+script = ExtResource("2_ishd8")
+max_health = 500
+metadata/_custom_type_script = "uid://c2dcuh7wij0sh"
+
+[node name="Health" type="Label" parent="Player2" unique_id=137204201]
+offset_left = -108.0
+offset_top = -49.0
+offset_right = -68.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 53
+script = ExtResource("5_vvmht")
+
+[node name="Turn" type="Label" parent="Player2" unique_id=1675651426]
+offset_left = -208.0
+offset_top = 53.0
+offset_right = -168.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 53
+script = ExtResource("6_1b8x5")
+
+[node name="Boss" type="Node2D" parent="." unique_id=1270920420]
+position = Vector2(1243, 575)
+script = ExtResource("2_ishd8")
+max_health = 500
+abilities = Array[ExtResource("3_bvur8")]([ExtResource("4_af2l1")])
+metadata/_custom_type_script = "uid://c2dcuh7wij0sh"
+
+[node name="Health" type="Label" parent="Boss" unique_id=2042712014]
+offset_left = -141.0
+offset_top = -38.0
+offset_right = -101.0
+offset_bottom = -15.0
+theme_override_font_sizes/font_size = 53
+script = ExtResource("5_vvmht")
+
+[node name="Turn" type="Label" parent="Boss" unique_id=887092402]
+offset_left = -208.0
+offset_top = 53.0
+offset_right = -168.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 53
+script = ExtResource("6_1b8x5")
+
+[node name="Button" type="Button" parent="." unique_id=1737307383]
+offset_left = 576.0
+offset_top = 126.0
+offset_right = 1196.0
+offset_bottom = 249.0
+text = "Run Turn"
+
+[connection signal="game_ended" from="." to="Button" method="set_disabled" binds= [false]]
+[connection signal="round_ended" from="." to="Button" method="set_disabled" binds= [false]]
+[connection signal="round_started" from="." to="Button" method="set_disabled" binds= [true]]
+[connection signal="pressed" from="Button" to="." method="run_turn"]

@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://dd2wui6mqdcf2"]
+
+[ext_resource type="Script" uid="uid://c4rwprj6d61c0" path="res://scripts/status_effects/status_effect.gd" id="1_t42ey"]
+[ext_resource type="Script" uid="uid://c2ci25gmhnb4w" path="res://scripts/status_effects/status_effect_stack.gd" id="2_wvlor"]
+[ext_resource type="Script" uid="uid://w6h7oqtjl61k" path="res://scripts/status_effects/status_effect_modifier.gd" id="3_dmg4q"]
+[ext_resource type="Script" uid="uid://d0uvf6jnorxpw" path="res://scripts/status_effects/status_effect_trigger.gd" id="4_picea"]
+
+[sub_resource type="Resource" id="Resource_a4f57"]
+script = ExtResource("3_dmg4q")
+modifier_type = 1
+modifier_amount = 0.2
+metadata/_custom_type_script = "uid://w6h7oqtjl61k"
+
+[sub_resource type="Resource" id="Resource_ptrx4"]
+script = ExtResource("3_dmg4q")
+modifier_field = 2
+modifier_amount = 0.2
+metadata/_custom_type_script = "uid://w6h7oqtjl61k"
+
+[sub_resource type="Resource" id="Resource_ng7f1"]
+script = ExtResource("2_wvlor")
+description = "Increase the attack and accuracy of a character"
+modifiers = Array[ExtResource("3_dmg4q")]([SubResource("Resource_a4f57"), SubResource("Resource_ptrx4")])
+metadata/_custom_type_script = "uid://c2ci25gmhnb4w"
+
+[resource]
+script = ExtResource("1_t42ey")
+stacks = Array[ExtResource("2_wvlor")]([SubResource("Resource_ng7f1")])
+name = "En Garde"
+effect_type = 0
+metadata/_custom_type_script = "uid://c4rwprj6d61c0"

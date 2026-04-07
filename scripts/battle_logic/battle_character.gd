@@ -45,6 +45,7 @@ var alive: bool:
 	get():
 		return current_health > 0
 var _status_effects: Array[StatusEffectContainer] = []
+var reactions: Array[Action] = []
 
 var last_attacker: BattleCharacter = null
 
@@ -176,6 +177,8 @@ func on_damage_received(attackContext: AttackContext):
 	
 	for instance in _status_effects:
 		instance.on_damage_received(attackContext)
+	for instance in _status_effects.duplicate():	
+		await instance.run_triggers(StatusEffectTrigger.Type.ON_ATTACKED)
 
 	damaged.emit(damage, attackContext)
 
@@ -192,3 +195,13 @@ func _remove_effect_instance(instance: StatusEffectContainer) -> void:
 
 func die() -> void:
 	died.emit()
+
+func add_reactions(actions: Array[Action]) -> void:
+	for action in actions:
+		reactions.append(action)
+	
+func get_reactions() -> Array[Action]:
+	var reaction_list = reactions.duplicate()
+	reactions.clear() 
+	return reaction_list
+	

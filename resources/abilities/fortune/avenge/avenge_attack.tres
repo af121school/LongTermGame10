@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="ReactionMove" format=3 uid="uid://02sck3xit4hb"]
+
+[ext_resource type="Script" uid="uid://be5ru5snax08s" path="res://scripts/ability/action/apply_status_action.gd" id="1_sjuea"]
+[ext_resource type="Script" uid="uid://bihndepd0cudw" path="res://scripts/ability/action/static_damage_action.gd" id="1_t8jgk"]
+[ext_resource type="Script" uid="uid://dhw3a85it2egr" path="res://scripts/ability/action/reaction_move.gd" id="1_vhkj8"]
+[ext_resource type="Resource" uid="uid://dd2wui6mqdcf2" path="res://resources/status_effects/Fortune/en_garde.tres" id="2_c6x34"]
+[ext_resource type="Script" uid="uid://cy60nwkkhatr8" path="res://scripts/ability/action/hit_chance_action.gd" id="3_dcpwc"]
+
+[sub_resource type="Resource" id="Resource_a8bfp"]
+script = ExtResource("1_sjuea")
+status_effect = ExtResource("2_c6x34")
+max_stacks = 1
+override_target = true
+metadata/_custom_type_script = "uid://be5ru5snax08s"
+
+[sub_resource type="Resource" id="Resource_1olqg"]
+script = ExtResource("1_t8jgk")
+damage = 15
+metadata/_custom_type_script = "uid://bihndepd0cudw"
+
+[sub_resource type="Resource" id="Resource_cub2p"]
+script = ExtResource("3_dcpwc")
+success_chance = 0.5
+success_action = SubResource("Resource_1olqg")
+fail_action = SubResource("Resource_a8bfp")
+metadata/_custom_type_script = "uid://cy60nwkkhatr8"
+
+[resource]
+script = ExtResource("1_vhkj8")
+action = SubResource("Resource_cub2p")
+name = "Avenge Attack"
+metadata/_custom_type_script = "uid://dhw3a85it2egr"
