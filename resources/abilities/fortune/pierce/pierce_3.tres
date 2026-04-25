@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Ability" format=3 uid="uid://bp3puv1uvdeor"]
 
 [ext_resource type="Script" uid="uid://ny1mjfoo1mqc" path="res://scripts/ability/ability.gd" id="1_bmkyx"]
-[ext_resource type="Script" uid="uid://d0rap3gi3boj5" path="res://scripts/ability/action/damage_action.gd" id="1_gvqlo"]
-[ext_resource type="Script" uid="uid://xwcbloqu4nwu" path="res://scripts/ability/action/abstracts/action.gd" id="1_rte2y"]
-[ext_resource type="Script" uid="uid://be5ru5snax08s" path="res://scripts/ability/action/apply_status_action.gd" id="3_kp61i"]
-[ext_resource type="Resource" uid="uid://dpscjkruqnc5j" path="res://resources/status_effects/bleed.tres" id="4_tdayp"]
-[ext_resource type="Script" uid="uid://da17dshmjafs6" path="res://scripts/ability/action/group_action.gd" id="5_ur74e"]
+[ext_resource type="Script" uid="uid://d0rap3gi3boj5" path="res://scripts/action/target_action/base_actions/damage_action.gd" id="1_gvqlo"]
+[ext_resource type="Script" uid="uid://xwcbloqu4nwu" path="res://scripts/action/abstracts/action.gd" id="1_rte2y"]
+[ext_resource type="Script" uid="uid://be5ru5snax08s" path="res://scripts/action/target_action/base_actions/apply_status_action.gd" id="3_kp61i"]
+[ext_resource type="Resource" uid="uid://dpscjkruqnc5j" path="res://resources/status_effects/flexible/bleed.tres" id="4_tdayp"]
+[ext_resource type="Script" uid="uid://da17dshmjafs6" path="res://scripts/action/group_action.gd" id="5_ur74e"]
 
 [sub_resource type="Resource" id="Resource_posjc"]
 script = ExtResource("1_gvqlo")

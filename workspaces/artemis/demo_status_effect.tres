@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://boirpi7nfrlio"]
 
 [ext_resource type="Script" uid="uid://c4rwprj6d61c0" path="res://scripts/status_effects/status_effect.gd" id="1_isq7a"]
-[ext_resource type="Script" uid="uid://c2ci25gmhnb4w" path="res://scripts/status_effects/status_effect_stack.gd" id="2_84h3c"]
-[ext_resource type="Script" uid="uid://w6h7oqtjl61k" path="res://scripts/status_effects/status_effect_modifier.gd" id="3_df4r0"]
-[ext_resource type="Script" uid="uid://d0uvf6jnorxpw" path="res://scripts/status_effects/status_effect_trigger.gd" id="4_ew45o"]
-[ext_resource type="Script" uid="uid://bihndepd0cudw" path="res://scripts/ability/action/static_damage_action.gd" id="5_ew45o"]
+[ext_resource type="Script" uid="uid://c2ci25gmhnb4w" path="res://scripts/status_effects/components/status_effect_stack.gd" id="2_84h3c"]
+[ext_resource type="Script" uid="uid://w6h7oqtjl61k" path="res://scripts/status_effects/components/status_effect_modifier.gd" id="3_df4r0"]
+[ext_resource type="Script" uid="uid://d0uvf6jnorxpw" path="res://scripts/status_effects/components/status_effect_trigger.gd" id="4_ew45o"]
+[ext_resource type="Script" uid="uid://bihndepd0cudw" path="res://scripts/action/target_action/base_actions/static_damage_action.gd" id="5_ew45o"]
 
 [sub_resource type="Resource" id="Resource_ats08"]
 script = ExtResource("3_df4r0")

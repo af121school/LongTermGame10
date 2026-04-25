@@ -11,7 +11,6 @@ enum DamageType {
 	FINAL_DAMAGE
 }
 
-## Whether this effect is positive, negative, or locked (cannot be transferred).
 @export var damage_type: DamageType = DamageType.TRUE_DAMAGE
 
 func _setup_container(container: StatusEffectContainer) -> void:

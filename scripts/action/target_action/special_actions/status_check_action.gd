@@ -1,5 +1,5 @@
 extends TargetAction
-class_name CheckForStatusAction
+class_name StatusCheckAction
 
 ## The status effect to check for
 @export var status_effect: BaseStatusEffect

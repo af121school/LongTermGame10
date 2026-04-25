@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="StatusEffect" format=3 uid="uid://566yr04amve8"]
 
 [ext_resource type="Script" uid="uid://c4rwprj6d61c0" path="res://scripts/status_effects/status_effect.gd" id="1_pr25u"]
-[ext_resource type="Script" uid="uid://c2ci25gmhnb4w" path="res://scripts/status_effects/status_effect_stack.gd" id="2_qnnco"]
-[ext_resource type="Script" uid="uid://w6h7oqtjl61k" path="res://scripts/status_effects/status_effect_modifier.gd" id="3_v704r"]
-[ext_resource type="Script" uid="uid://d0uvf6jnorxpw" path="res://scripts/status_effects/status_effect_trigger.gd" id="4_dermo"]
+[ext_resource type="Script" uid="uid://c2ci25gmhnb4w" path="res://scripts/status_effects/components/status_effect_stack.gd" id="2_qnnco"]
+[ext_resource type="Script" uid="uid://w6h7oqtjl61k" path="res://scripts/status_effects/components/status_effect_modifier.gd" id="3_v704r"]
+[ext_resource type="Script" uid="uid://d0uvf6jnorxpw" path="res://scripts/status_effects/components/status_effect_trigger.gd" id="4_dermo"]
 
 [sub_resource type="Resource" id="Resource_lm5y3"]
 script = ExtResource("3_v704r")

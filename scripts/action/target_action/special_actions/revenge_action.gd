@@ -1,5 +1,5 @@
 extends TargetAction
-class_name DamageTakenBasedAttackAction
+class_name RevengeAction
 ## Deals damage based on the accumulated value in a DamageTakenBasedStatusEffect.
 
 @export var reflection_multiplier_per_stack: float = 0.01
